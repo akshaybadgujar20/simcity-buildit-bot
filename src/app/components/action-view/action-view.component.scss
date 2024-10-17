@@ -59,16 +59,27 @@ h3 {
 
 .icon-button{
   padding: 0!important;
-  margin: 0 10px 15px 5px !important;
+  //margin: 0 10px 15px 5px !important;
+  margin-right: 15px !important;
 }
 
-.image-icon{
+/*.image-icon{
   height: 48px;
   width: 48px;
 
   img{
     height: 48px;
     width: 48px;
+  }
+}*/
+
+.image-icon{
+  height: 60px;
+  width: 60px;
+
+  img{
+    height: 60px;
+    width: 60px;
   }
 }
 
