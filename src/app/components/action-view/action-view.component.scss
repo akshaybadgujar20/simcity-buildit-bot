@@ -56,3 +56,18 @@ h3 {
 .disabled{
   cursor: not-allowed;
 }
+
+.icon-button{
+  padding: 0!important;
+  margin: 0!important;
+}
+
+.image-icon{
+  height: 48px;
+  width: 48px;
+
+  img{
+    height: 48px;
+    width: 48px;
+  }
+}

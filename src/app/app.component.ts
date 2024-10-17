@@ -12,6 +12,9 @@ import {BARLEYCORN_POINT, BASE_CITY,
   COTTONWOOD_FOREST, GRAND_HAVEN, HOKUSAI_CLIFFS, JUGBAND_HILLS, MAGNOLIA_WETLANDS, NAUTILUS_PLATEAU,
   PETROL_BAY, SUNSHINE_VALLEY, TRADERS_RIDGE } from './constants/city.names';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatIcon} from "@angular/material/icon";
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +26,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatTabsModule,
     ActionViewComponent,
-    HttpClientModule
+    HttpClientModule,
+    MatIcon,
+    MatSidenavModule,
+    MatListModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -33,6 +39,7 @@ export class AppComponent {
   selectedTab: any = 0;
   materialList: any;
   tabList: any;
+  showFiller = false;
   actionsValues = [
     {"title": CONTINUOUS_BUY, "function_call": "CONTINUOUS_BUY"},
     {"title": SELL_WITH_FULL_VALUE, "function_call": "SELL_WITH_FULL_VALUE"},
@@ -43,6 +50,53 @@ export class AppComponent {
     {"title": ADVERTISE_ITEM_ON_TRADE_DEPOT, "function_call": "ADVERTISE_ITEM_ON_TRADE_DEPOT"},
     {"title": ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION, "function_call": "ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION"},
     {"title": ADD_RAW_MATERIAL_TO_PRODUCTION, "function_call": "ADD_RAW_MATERIAL_TO_PRODUCTION"},
+  ];
+  selectedRoute = 0;
+  routerLinkList = [
+    {
+      link: "/base_city",
+      name: "Base City"
+    },
+    {
+      link: "/barleycorn_point",
+      name: "Barleycorn Point"
+    },
+    {
+      link: "/sunshine_valley",
+      name: "Sunshine Valley"
+    },
+    {
+      link: "/traders_ridge",
+      name: "Traders Ridge"
+    },
+    {
+      link: "/magnolia_wetlands",
+      name: "Magnolia Wetlands"
+    },
+    {
+      link: "/hokusai_cliffs",
+      name: "Hokusai Cliffs"
+    },
+    {
+      link: "/nautilus_plateau",
+      name: "Nautilus Plateau"
+    },
+    {
+      link: "/petrol_bay",
+      name: "Petrol Bay"
+    },
+    {
+      link: "/grand_haven",
+      name: "Grand Haven"
+    },
+    {
+      link: "/jugband_hills",
+      name: "Jugband Hills"
+    },
+    {
+      link: "/cottonwood_forest",
+      name: "Cottonwood Forest"
+    }
   ];
 
 
@@ -163,5 +217,16 @@ export class AppComponent {
       }
     }
     return result;
+  }
+
+  // Optional: If you want to handle any logic when the sidenav is toggled
+  onSidenavToggle(isOpened: boolean) {
+    console.log('Sidenav is opened: ', isOpened);
+  }
+
+
+
+  selectRoute(index:number){
+    this.selectedRoute = index;
   }
 }

@@ -53,9 +53,6 @@ export class ActionViewComponent implements OnInit{
 
   @Input() selectedTabData: any;
   selectedOptions: string[] = [];
-  searchControl = new FormControl();
-  groupedOptions: any[] =  [];
-  filteredOptions: any[] =  [];
   selectedIndex: any;
   selectedItemNameList:any[] = [];
 
@@ -92,80 +89,78 @@ export class ActionViewComponent implements OnInit{
   frequentMaterialList = [
     {
       "label": "CEMENT",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "FRUIT_AND_BERRIES",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "WATCH",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "TREE_SAPLINGS",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "SHOVEL",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "MEASURING_TAPE",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "LIGHTING_SYSTEM",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "TV",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "STORAGE_CAMERA",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "STORAGE_LOCK",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     },
     {
       "label": "STORAGE_BARS",
-      "isChecked": false
+      "isChecked": false,
+      "isAdded": false,
+      "imgUrl":"assets/icons/cement.png"
     }
   ];
 
   accordion = viewChild.required(MatAccordion);
 
   ngOnInit() {
-
-    Object.keys(this.selectedTabData.materials).forEach(key => {
-      let itemList: string[] = [];
-      this.selectedTabData.materials[key].forEach((materialName:string)=>{
-        itemList.push(materialName);
-      });
-      let object = {
-        label: key,
-        options:itemList
-      }
-      this.groupedOptions.push(object);
-    });
-    this.filteredOptions = this.groupedOptions;
   }
 
   constructor(private http: HttpClient) {
-    this.searchControl.valueChanges.subscribe((searchValue) => {
-      this.filterOptions(searchValue);
-    });
-  }
-
-  private filterOptions(searchValue: string) {
-    const lowerCaseSearchValue = searchValue.toLowerCase();
-    this.filteredOptions = this.groupedOptions.map(group => ({
-      ...group,
-      options: group.options.filter((option: string) => option.toLowerCase().includes(lowerCaseSearchValue))
-    })).filter(group => group.options.length > 0); // Filter out empty groups
   }
 
   removeSelectedOption(option: string) {
@@ -195,8 +190,10 @@ export class ActionViewComponent implements OnInit{
     const index  = this.selectedItemNameList.findIndex((item:any) => item.label === material.label);
     if (index === -1){
       this.selectedItemNameList.push(material);
+      material.isAdded = true;
     }else {
       this.selectedItemNameList.splice(index, 1);
+      material.isAdded = false;
     }
   }
 

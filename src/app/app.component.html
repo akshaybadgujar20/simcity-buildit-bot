@@ -1,9 +1,31 @@
-<div class="container-fluid">
-  <mat-tab-group (selectedTabChange)="onTabChange($event)" animationDuration="0ms">
-    <mat-tab *ngFor="let tab of tabList; let i = index" [label]="tab.title">
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav for mobile layout -->
+  <mat-sidenav #drawer mode="over" class="sidenav" (openedChange)="onSidenavToggle($event)">
+    <mat-nav-list>
+      <div *ngFor="let route of routerLinkList; let index = index">
+        <mat-list-item (click)="drawer.toggle()" routerLink="route.link" (click)="selectRoute(index)" class="list-item" [class]="{'selected': selectedRoute === index}">{{route.name}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <!-- Toolbar for the top of the app -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ tabList[selectedRoute].title }}</span>
+    </mat-toolbar>
+
+    <!-- Page content -->
+    <!--<mat-tab *ngFor="let tab of tabList; let i = index" [label]="tab.title">
       <ng-container>
         <app-action-view [selectedTabData]="tab"></app-action-view>
       </ng-container>
-    </mat-tab>
-  </mat-tab-group>
-</div>
+    </mat-tab>-->
+    <app-action-view [selectedTabData]="tabList[selectedRoute]"></app-action-view>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
