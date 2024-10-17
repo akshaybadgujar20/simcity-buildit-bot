@@ -18,6 +18,7 @@ import {MatDatepicker} from "@angular/material/datepicker";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {MatButtonModule} from '@angular/material/button';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {MatDivider} from "@angular/material/divider";
 
 
 @Component({
@@ -42,7 +43,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     MatCheckbox,
     MatExpansionModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDivider
   ],
   templateUrl: './action-view.component.html',
   styleUrl: './action-view.component.scss',
@@ -87,67 +89,67 @@ export class ActionViewComponent implements OnInit{
 
   frequentMaterialList = [
     {
-      "label": "CEMENT",
+      "name": "CEMENT",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/cement.png"
     },
     {
-      "label": "FRUIT_AND_BERRIES",
+      "name": "FRUIT_AND_BERRIES",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/fruit_and_berries.png"
     },
     {
-      "label": "WATCH",
+      "name": "WATCH",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/watch.png"
     },
     {
-      "label": "TREE_SAPLINGS",
+      "name": "TREE_SAPLINGS",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/tree_samplings.png"
     },
     {
-      "label": "SHOVEL",
+      "name": "SHOVEL",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/shovel.png"
     },
     {
-      "label": "MEASURING_TAPE",
+      "name": "MEASURING_TAPE",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/measuring_tape.png"
     },
     {
-      "label": "LIGHTING_SYSTEM",
+      "name": "LIGHTING_SYSTEM",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/lighting_system.png"
     },
     {
-      "label": "TV",
+      "name": "TV",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/tv.png"
     },
     {
-      "label": "STORAGE_CAMERA",
+      "name": "STORAGE_CAMERA",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/storage_camera.png"
     },
     {
-      "label": "STORAGE_LOCK",
+      "name": "STORAGE_LOCK",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/storage_lock.png"
     },
     {
-      "label": "STORAGE_BARS",
+      "name": "STORAGE_BARS",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/storage_bars.png"
@@ -185,17 +187,6 @@ export class ActionViewComponent implements OnInit{
     });
   }
 
-  onCheckboxChange(material: any) {
-    const index  = this.selectedItemNameList.findIndex((item:any) => item.label === material.label);
-    if (index === -1){
-      this.selectedItemNameList.push(material);
-      material.isAdded = true;
-    }else {
-      this.selectedItemNameList.splice(index, 1);
-      material.isAdded = false;
-    }
-  }
-
   buildingItemList(building:any){
     return building.value as any[]; // Type assertion to ensure data is iterable
   }
@@ -212,9 +203,23 @@ export class ActionViewComponent implements OnInit{
     this.selectedItemNameList = [];
   }
 
-  addChipToSelection(material: any){
-    this.onCheckboxChange(material);
+  addChipToSelection(materialInfo: any){
+    const index  = this.selectedItemNameList.findIndex((item:any) => item.name === materialInfo.name);
+    if (index === -1){
+      this.selectedItemNameList.push(materialInfo);
+      materialInfo.isAdded = true;
+    }else {
+      this.selectedItemNameList.splice(index, 1);
+      materialInfo.isAdded = false;
+    }
   }
 
+  getItemValue(item:any){
+    return item as any;
+  }
+
+  getImageUrl(materialInfo:any){
+    return materialInfo.imgUrl;
+  }
 }
 

@@ -24,12 +24,12 @@
     }
   }
 
-  .custom-height{
-    height: calc(100vh - 120px);
-  }
-
   .mat-drawer-content{
     overflow: hidden !important;
+  }
+
+  .mat-sidenav-content{
+    height: calc(100vh - 70px) !important;
   }
 }
 

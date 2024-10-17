@@ -114,13 +114,13 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
     this.http.get<any>('assets/data.json').subscribe(data => {
-      this.materialList = this.convertData(data);
+      this.materialList = data;
       this.tabList = [
         {
           "title": BASE_CITY,
           "port": "5555",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -128,7 +128,7 @@ export class AppComponent {
           "title": BARLEYCORN_POINT,
           "port": "5895",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":9,
           "commercialCount":7
         },
@@ -136,7 +136,7 @@ export class AppComponent {
           "title": SUNSHINE_VALLEY,
           "port": "5905",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":9,
           "commercialCount":7
         },
@@ -144,7 +144,7 @@ export class AppComponent {
           "title": TRADERS_RIDGE,
           "port": "5915",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":7,
           "commercialCount":7
         },
@@ -152,7 +152,7 @@ export class AppComponent {
           "title": MAGNOLIA_WETLANDS,
           "port": "5925",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -160,7 +160,7 @@ export class AppComponent {
           "title": HOKUSAI_CLIFFS,
           "port": "6025",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -168,7 +168,7 @@ export class AppComponent {
           "title": NAUTILUS_PLATEAU,
           "port": "5945",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -176,7 +176,7 @@ export class AppComponent {
           "title": PETROL_BAY,
           "port": "5955",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -184,7 +184,7 @@ export class AppComponent {
           "title": GRAND_HAVEN,
           "port": "5965",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -192,7 +192,7 @@ export class AppComponent {
           "title": JUGBAND_HILLS,
           "port": "5985",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         },
@@ -200,7 +200,7 @@ export class AppComponent {
           "title": COTTONWOOD_FOREST,
           "port": "6005",
           "actions": this.actionsValues,
-          "materials":this.materialList,
+          "materialList":this.materialList,
           "factoriesCount":12,
           "commercialCount":15
         }
@@ -211,25 +211,6 @@ export class AppComponent {
 
   onTabChange(event: any) {
     this.selectedTab = event.index;
-  }
-
-  convertData(data: any): any {
-    const result: any = {};
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        let materialNameList = Object.keys(data[key]);
-        let materialObjectList: any[] = [];
-        materialNameList.forEach(material=>{
-          const object = {
-            label: material,
-            isChecked: false
-          }
-          materialObjectList.push(object);
-        })
-        result[key] = materialObjectList;
-      }
-    }
-    return result;
   }
 
   onSidenavToggle(isOpened: boolean) {
@@ -244,6 +225,30 @@ export class AppComponent {
 
   openBottomSheet(): void {
     this._bottomSheet.open(BottomSheetComponent);
+  }
+
+  convertData(data:any){
+    let result = [];
+    for(let key of Object.keys(data)){
+      let materialList = [];
+      for(let materialkey of Object.keys(data[key])){
+        let materialInfo = {
+          materialName: materialkey,
+          materialInfo: data[key][materialkey]
+        }
+        materialList.push(materialInfo);
+      }
+      let buildingObject = {
+        buildingName: key,
+        materialList: materialList
+      }
+      result.push(buildingObject);
+    }
+    console.log(JSON.stringify(result));
+  }
+
+  clearMaterials(){
+
   }
 
 }

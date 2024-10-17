@@ -4,7 +4,7 @@
     <mat-nav-list>
       <div *ngFor="let route of routerLinkList; let index = index">
         <mat-list-item (click)="drawer.toggle()" routerLink="route.link" (click)="selectRoute(index)" class="list-item" [class]="{'selected': selectedRoute === index}">{{route.name}}</mat-list-item>
-        <mat-divider></mat-divider>
+        <mat-divider class="mb-3"></mat-divider>
       </div>
     </mat-nav-list>
   </mat-sidenav>
@@ -25,12 +25,11 @@
         <app-action-view [selectedTabData]="tab"></app-action-view>
       </ng-container>
     </mat-tab>-->
-    <div class="custom-height">
-      <app-action-view [selectedTabData]="tabList[selectedRoute]" ></app-action-view>
-    </div>
-    <div class="d-flex justify-content-around">
-      <button mat-raised-button (click)="openBottomSheet()" color="warn">Take Action</button>
-    </div>
+    <app-action-view [selectedTabData]="tabList[selectedRoute]" ></app-action-view>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+<div class="d-flex justify-content-around mt-3">
+  <button mat-raised-button (click)="openBottomSheet()" color="warn">Take Action</button>
+  <button mat-raised-button (click)="clearMaterials()" color="warn">Clear</button>
+</div>
