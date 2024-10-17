@@ -18,6 +18,7 @@ import {
 import {MatDatepicker} from "@angular/material/datepicker";
 import {MatCheckbox} from "@angular/material/checkbox";
 import { MatButtonModule } from '@angular/material/button';
+import {HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -41,7 +42,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatDatepicker,
     MatCheckbox,
     MatExpansionModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   templateUrl: './action-view.component.html',
   styleUrl: './action-view.component.scss',
@@ -87,6 +89,53 @@ export class ActionViewComponent implements OnInit{
     "FISH_MARKETPLACE",
   ];
 
+  frequentMaterialList = [
+    {
+      "label": "CEMENT",
+      "isChecked": false
+    },
+    {
+      "label": "FRUIT_AND_BERRIES",
+      "isChecked": false
+    },
+    {
+      "label": "WATCH",
+      "isChecked": false
+    },
+    {
+      "label": "TREE_SAPLINGS",
+      "isChecked": false
+    },
+    {
+      "label": "SHOVEL",
+      "isChecked": false
+    },
+    {
+      "label": "MEASURING_TAPE",
+      "isChecked": false
+    },
+    {
+      "label": "LIGHTING_SYSTEM",
+      "isChecked": false
+    },
+    {
+      "label": "TV",
+      "isChecked": false
+    },
+    {
+      "label": "STORAGE_CAMERA",
+      "isChecked": false
+    },
+    {
+      "label": "STORAGE_LOCK",
+      "isChecked": false
+    },
+    {
+      "label": "STORAGE_BARS",
+      "isChecked": false
+    }
+  ];
+
   accordion = viewChild.required(MatAccordion);
 
   ngOnInit() {
@@ -105,7 +154,7 @@ export class ActionViewComponent implements OnInit{
     this.filteredOptions = this.groupedOptions;
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.searchControl.valueChanges.subscribe((searchValue) => {
       this.filterOptions(searchValue);
     });
@@ -123,12 +172,23 @@ export class ActionViewComponent implements OnInit{
     this.selectedOptions = this.selectedOptions.filter(selected => selected !== option);
   }
 
-  selectAction(action:any,index:number){
+  performAction(action:any,index:number){
     this.selectedOptions = [];
     if(this.selectedIndex === index){
       this.selectedIndex = -1;
-    } else
+    } else{
       this.selectedIndex = index;
+    }
+    const request = {
+      port: this.selectedTabData.port,
+      action: action.function_call,
+      commercialCount: this.selectedTabData.commercialCount,
+      factoriesCount: this.selectedTabData.factoriesCount,
+      selectedMaterials: this.selectedItemNameList.map(material => material.label)
+    }
+    this.http.post<any>('http://127.0.0.1:5000/perform/action', request).subscribe(response=>{
+      console.log(response)
+    });
   }
 
   onCheckboxChange(material: any) {
@@ -138,7 +198,6 @@ export class ActionViewComponent implements OnInit{
     }else {
       this.selectedItemNameList.splice(index, 1);
     }
-    console.log(this.selectedItemNameList);
   }
 
   buildingItemList(building:any){
@@ -148,6 +207,17 @@ export class ActionViewComponent implements OnInit{
   removeChip(index:number){
     this.selectedItemNameList[index].isChecked = false;
     this.selectedItemNameList.splice(index, 1);
+  }
+
+  clearAllChips(){
+    this.selectedItemNameList.forEach(item=>{
+      item.isChecked = false;
+    });
+    this.selectedItemNameList = [];
+  }
+
+  addChipToSelection(material: any){
+    this.onCheckboxChange(material);
   }
 
 }

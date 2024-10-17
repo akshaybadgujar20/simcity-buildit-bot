@@ -55,88 +55,88 @@ export class AppComponent {
           "port": "5555",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": BARLEYCORN_POINT,
           "port": "5895",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":9,
-          "no_of_commercial_buildings":7
+          "factoriesCount":9,
+          "commercialCount":7
         },
         {
           "title": SUNSHINE_VALLEY,
           "port": "5905",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":9,
-          "no_of_commercial_buildings":7
+          "factoriesCount":9,
+          "commercialCount":7
         },
         {
           "title": TRADERS_RIDGE,
           "port": "5915",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":7,
-          "no_of_commercial_buildings":7
+          "factoriesCount":7,
+          "commercialCount":7
         },
         {
           "title": MAGNOLIA_WETLANDS,
           "port": "5925",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": HOKUSAI_CLIFFS,
           "port": "6025",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": NAUTILUS_PLATEAU,
           "port": "5945",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": PETROL_BAY,
           "port": "5955",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": GRAND_HAVEN,
           "port": "5965",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": JUGBAND_HILLS,
           "port": "5985",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         },
         {
           "title": COTTONWOOD_FOREST,
           "port": "6005",
           "actions": this.actionsValues,
           "materials":this.materialList,
-          "no_of_factories":12,
-          "no_of_commercial_buildings":15
+          "factoriesCount":12,
+          "commercialCount":15
         }
       ];
     });

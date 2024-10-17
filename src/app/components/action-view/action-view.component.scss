@@ -45,7 +45,7 @@ h3 {
   top: -6px;
   font-size: 0.9rem;
   font-weight: 500;
-  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .accordion_container{
@@ -54,5 +54,5 @@ h3 {
 }
 
 .disabled{
-  background-color: gray;
+  cursor: not-allowed;
 }

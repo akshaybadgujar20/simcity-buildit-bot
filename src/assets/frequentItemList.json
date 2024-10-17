@@ -1,0 +1,46 @@
+[
+  {
+    "label": "CEMENT",
+    "isChecked": false
+  },
+  {
+    "label": "FRUIT_AND_BERRIES",
+    "isChecked": false
+  },
+  {
+    "label": "WATCH",
+    "isChecked": false
+  },
+  {
+    "label": "TREE_SAPLINGS",
+    "isChecked": false
+  },
+  {
+    "label": "SHOVEL",
+    "isChecked": false
+  },
+  {
+    "label": "MEASURING_TAPE",
+    "isChecked": false
+  },
+  {
+    "label": "LIGHTING_SYSTEM",
+    "isChecked": false
+  },
+  {
+    "label": "TV",
+    "isChecked": false
+  },
+  {
+    "label": "STORAGE_CAMERA",
+    "isChecked": false
+  },
+  {
+    "label": "STORAGE_LOCK",
+    "isChecked": false
+  },
+  {
+    "label": "STORAGE_BARS",
+    "isChecked": false
+  }
+]
