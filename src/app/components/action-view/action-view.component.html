@@ -7,22 +7,23 @@
   <div class="col-12">
     <span class="h5">Selected Materials</span>
     <mat-icon fontIcon="delete" (click)="clearAllChips()" class="float-end cursor-pointer" *ngIf="selectedItemNameList.length>0"></mat-icon>
-    <div>
-      <button mat-raised-button [disabled]="selectedItemNameList.length === 0" (click)="removeChip(index)" class="small-button mx-2 my-2" *ngFor="let material of selectedItemNameList;let index = index;">
-        <mat-icon>cancel</mat-icon>
-        {{material.label}}
+    <div class="mt-2">
+      <button mat-icon-button (click)="removeChip(index)" class="mx-2 my-2 icon-button" *ngFor="let material of selectedItemNameList;let index = index;">
+        <mat-icon class="image-icon">
+          <img [src]="material.imgUrl" alt="Icon" width="50px" height="50px">
+        </mat-icon>
       </button>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
       <span class="h5">Frequenty Used Materials</span>
-      <div>
+      <div class="mt-2">
         <button mat-icon-button (click)="addChipToSelection(material)" class="mx-2 my-2 icon-button" *ngFor="let material of frequentMaterialList; let index = index;">
           <!--<mat-icon fontIcon="add" *ngIf="!material.isAdded"></mat-icon>
           <mat-icon fontIcon="remove" *ngIf="material.isAdded"></mat-icon>-->
           <mat-icon class="image-icon">
-            <img src="assets/icons/cement.png" alt="Icon" width="50px" height="50px">
+            <img [src]="material.imgUrl" alt="Icon" width="50px" height="50px">
           </mat-icon>
         </button>
       </div>

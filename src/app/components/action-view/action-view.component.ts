@@ -1,13 +1,12 @@
-import {Component, Input, OnInit, ViewEncapsulation, viewChild} from '@angular/core';
+import {Component, Input, OnInit, viewChild, ViewEncapsulation} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from "@angular/material/select";
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import {MatChip, MatChipsModule} from "@angular/material/chips";
-import {MatIcon, MatIconModule} from "@angular/material/icon";
+import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
+import {MatChipsModule} from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
-import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
 import {
   MatAccordion,
   MatExpansionModule,
@@ -17,8 +16,8 @@ import {
 } from "@angular/material/expansion";
 import {MatDatepicker} from "@angular/material/datepicker";
 import {MatCheckbox} from "@angular/material/checkbox";
-import { MatButtonModule } from '@angular/material/button';
-import {HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @Component({
@@ -97,61 +96,61 @@ export class ActionViewComponent implements OnInit{
       "label": "FRUIT_AND_BERRIES",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/fruit_and_berries.png"
     },
     {
       "label": "WATCH",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/watch.png"
     },
     {
       "label": "TREE_SAPLINGS",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/tree_samplings.png"
     },
     {
       "label": "SHOVEL",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/shovel.png"
     },
     {
       "label": "MEASURING_TAPE",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/measuring_tape.png"
     },
     {
       "label": "LIGHTING_SYSTEM",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/lighting_system.png"
     },
     {
       "label": "TV",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/tv.png"
     },
     {
       "label": "STORAGE_CAMERA",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/storage_camera.png"
     },
     {
       "label": "STORAGE_LOCK",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/storage_lock.png"
     },
     {
       "label": "STORAGE_BARS",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
+      "imgUrl":"assets/icons/storage_bars.png"
     }
   ];
 

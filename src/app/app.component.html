@@ -16,7 +16,7 @@
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>{{ tabList[selectedRoute].title }}</span>
+      <span>{{ tabList[selectedRoute]?.title }}</span>
     </mat-toolbar>
 
     <!-- Page content -->
@@ -25,7 +25,12 @@
         <app-action-view [selectedTabData]="tab"></app-action-view>
       </ng-container>
     </mat-tab>-->
-    <app-action-view [selectedTabData]="tabList[selectedRoute]"></app-action-view>
+    <div class="custom-height">
+      <app-action-view [selectedTabData]="tabList[selectedRoute]" ></app-action-view>
+    </div>
+    <div class="d-flex justify-content-around">
+      <button mat-raised-button (click)="openBottomSheet()" color="warn">Take Action</button>
+    </div>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
