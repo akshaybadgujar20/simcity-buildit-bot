@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation, viewChild} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from "@angular/material/select";
@@ -7,6 +7,17 @@ import {MatChip, MatChipsModule} from "@angular/material/chips";
 import {MatIcon, MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
+import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
+import {
+  MatAccordion,
+  MatExpansionModule,
+  MatExpansionPanel,
+  MatExpansionPanelDescription,
+  MatExpansionPanelTitle
+} from "@angular/material/expansion";
+import {MatDatepicker} from "@angular/material/datepicker";
+import {MatCheckbox} from "@angular/material/checkbox";
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -22,7 +33,15 @@ import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
     MatChipsModule,
     MatIconModule,
     MatRadioGroup,
-    MatRadioButton
+    MatRadioButton,
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionPanelTitle,
+    MatExpansionPanelDescription,
+    MatDatepicker,
+    MatCheckbox,
+    MatExpansionModule,
+    MatButtonModule
   ],
   templateUrl: './action-view.component.html',
   styleUrl: './action-view.component.scss',
@@ -36,6 +55,39 @@ export class ActionViewComponent implements OnInit{
   groupedOptions: any[] =  [];
   filteredOptions: any[] =  [];
   selectedIndex: any;
+  selectedItemNameList:any[] = [];
+
+  leftList = [
+    "BUILDING_SUPPLIES_STORE",
+    "FURNITURE_STORE",
+    "FASHION_STORE",
+    "FAST_FOOD_RESTAURANT",
+    "DESERT_SHOP",
+    "VU_ITEMS",
+    "EXPANSION_ITEMS",
+    "BUREAU_OF_RESTORATION",
+    "CAR_PARTS",
+    "COUNTRY_STORE",
+    "DONUT_SHOP",
+    "ECO_SHOP",
+  ];
+
+  rightList = [
+    "FACTORY_RAW_MATERIALS",
+    "FARMER'S_MARKET",
+    "GARDENING_SUPPLIES",
+    "HARDWARE_STORE",
+    "HOME_APPLIANCES",
+    "CITY_STORAGE_ITEMS",
+    "REGIONAL_RAW_MATERIALS",
+    "SILK_STORE",
+    "SPORT_SHOP",
+    "TOY_SHOP",
+    "TROPICAL_PRODUCTS_STORE",
+    "FISH_MARKETPLACE",
+  ];
+
+  accordion = viewChild.required(MatAccordion);
 
   ngOnInit() {
 
@@ -77,6 +129,25 @@ export class ActionViewComponent implements OnInit{
       this.selectedIndex = -1;
     } else
       this.selectedIndex = index;
+  }
+
+  onCheckboxChange(material: any) {
+    const index  = this.selectedItemNameList.findIndex((item:any) => item.label === material.label);
+    if (index === -1){
+      this.selectedItemNameList.push(material);
+    }else {
+      this.selectedItemNameList.splice(index, 1);
+    }
+    console.log(this.selectedItemNameList);
+  }
+
+  buildingItemList(building:any){
+    return building.value as any[]; // Type assertion to ensure data is iterable
+  }
+
+  removeChip(index:number){
+    this.selectedItemNameList[index].isChecked = false;
+    this.selectedItemNameList.splice(index, 1);
   }
 
 }

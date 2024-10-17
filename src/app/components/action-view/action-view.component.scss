@@ -32,3 +32,27 @@ h3 {
 .selected-box{
   margin-left: 20px;
 }
+
+.custom-chip{
+  border: 1.5px solid gray;
+  border-radius: 10px 10px;
+  width: fit-content;
+  padding: 5px 7px 0 7px;
+}
+
+.chip-label{
+  position: relative;
+  top: -6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.accordion_container{
+  height: calc(100vh - 150px);
+  overflow: auto;
+}
+
+.disabled{
+  background-color: gray;
+}

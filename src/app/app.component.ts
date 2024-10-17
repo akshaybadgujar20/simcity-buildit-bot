@@ -40,9 +40,9 @@ export class AppComponent {
     {"title": COLLECT_FROM_FACTORY, "function_call": "COLLECT_FROM_FACTORY"},
     {"title": COLLECT_FROM_COMMERCIAL, "function_call": "COLLECT_FROM_COMMERCIAL"},
     {"title": COLLECT_SOLD_ITEM_MONEY, "function_call": "COLLECT_SOLD_ITEM_MONEY"},
+    {"title": ADVERTISE_ITEM_ON_TRADE_DEPOT, "function_call": "ADVERTISE_ITEM_ON_TRADE_DEPOT"},
     {"title": ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION, "function_call": "ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION"},
     {"title": ADD_RAW_MATERIAL_TO_PRODUCTION, "function_call": "ADD_RAW_MATERIAL_TO_PRODUCTION"},
-    {"title": ADVERTISE_ITEM_ON_TRADE_DEPOT, "function_call": "ADVERTISE_ITEM_ON_TRADE_DEPOT"}
   ];
 
 
@@ -150,7 +150,16 @@ export class AppComponent {
     const result: any = {};
     for (const key in data) {
       if (data.hasOwnProperty(key)) {
-        result[key] = Object.keys(data[key]);
+        let materialNameList = Object.keys(data[key]);
+        let materialObjectList: any[] = [];
+        materialNameList.forEach(material=>{
+          const object = {
+            label: material,
+            isChecked: false
+          }
+          materialObjectList.push(object);
+        })
+        result[key] = materialObjectList;
       }
     }
     return result;
