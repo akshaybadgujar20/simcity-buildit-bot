@@ -4,7 +4,7 @@
     <mat-nav-list>
       <div *ngFor="let route of routerLinkList; let index = index">
         <mat-list-item (click)="drawer.toggle()" routerLink="route.link" (click)="selectRoute(index)" class="list-item" [class]="{'selected': selectedRoute === index}">{{route.name}}</mat-list-item>
-        <mat-divider class="mb-3"></mat-divider>
+        <mat-divider></mat-divider>
       </div>
     </mat-nav-list>
   </mat-sidenav>

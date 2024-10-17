@@ -1,4 +1,4 @@
-import { Component, computed, inject, model, signal } from '@angular/core';
+import { Component, ViewChild, computed, inject, model, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -111,6 +111,7 @@ export class AppComponent {
       name: "Cottonwood Forest"
     }
   ];
+  @ViewChild(ActionViewComponent, { static: false }) actionViewComponent!: ActionViewComponent;
 
   constructor(private http: HttpClient) {
     this.http.get<any>('assets/data.json').subscribe(data => {
@@ -206,7 +207,6 @@ export class AppComponent {
         }
       ];
     });
-
   }
 
   onTabChange(event: any) {
@@ -248,7 +248,8 @@ export class AppComponent {
   }
 
   clearMaterials(){
-
+    if (this.actionViewComponent) {
+      this.actionViewComponent.clearAllChips();
+    }
   }
-
 }
