@@ -1,0 +1,9 @@
+export const CONTINUOUS_BUY = "Continuous Buy";
+export const SELL_WITH_FULL_VALUE = "Sell with full value";
+export const SELL_WITH_ZERO_VALUE = "Sell with zero value";
+export const COLLECT_FROM_FACTORY = "Collect from factory";
+export const COLLECT_FROM_COMMERCIAL = "Collect from commercial";
+export const COLLECT_SOLD_ITEM_MONEY = "Collect sold item Money";
+export const ADVERTISE_ITEM_ON_TRADE_DEPOT = "Advertise item on trade depot";
+export const ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION = "Add commercial to production";
+export const ADD_RAW_MATERIAL_TO_PRODUCTION = "Add raw material to production";

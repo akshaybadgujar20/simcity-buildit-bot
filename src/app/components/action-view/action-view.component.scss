@@ -1,0 +1,34 @@
+mat-form-field {
+  width: 100%;
+}
+
+h3 {
+  margin: 16px 0 8px;
+}
+
+.multi-select{
+  .mat-mdc-form-field{
+    .mat-mdc-text-field-wrapper {
+      background-color: white !important;
+    }
+  }
+}
+
+.box{
+  width: 320px;
+  background-color: cadetblue;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  transition: 300ms;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.box:hover{
+  transform: translateX(20px);
+}
+
+.selected-box{
+  margin-left: 20px;
+}

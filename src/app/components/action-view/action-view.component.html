@@ -1,0 +1,35 @@
+<div class="row multi-select mt-4">
+  <div class="col-3">
+    <div *ngFor="let action of selectedTabData.actions;let index = index;" (click)="selectAction(action,index)" class="box" [class]="{'selected-box':selectedIndex === index}">
+      {{action.title}}
+    </div>
+  </div>
+  <div class="col-6">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose options</mat-label>
+      <mat-select [(ngModel)]="selectedOptions" multiple>
+        <mat-select-trigger>
+          <mat-chip-set *ngIf="selectedOptions.length">
+            <mat-chip *ngFor="let option of selectedOptions" [removable]="true" (removed)="removeSelectedOption(option)">
+              {{ option }}
+              <mat-icon matChipRemove *ngIf="selectedOptions.length">cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-set>
+          <span *ngIf="!selectedOptions.length">Select options</span>
+        </mat-select-trigger>
+
+        <mat-option>
+          <ngx-mat-select-search [formControl]="searchControl" placeholderLabel="Search options..."></ngx-mat-select-search>
+        </mat-option>
+
+        <ng-container *ngFor="let group of filteredOptions">
+          <mat-optgroup [label]="group.label">
+            <mat-option *ngFor="let option of group.options" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-optgroup>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

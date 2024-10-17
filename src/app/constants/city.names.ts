@@ -1,0 +1,11 @@
+export const BASE_CITY = "Base City";
+export const BARLEYCORN_POINT = "Barleycorn Point";
+export const SUNSHINE_VALLEY = "Sunshine Valley";
+export const TRADERS_RIDGE = "Traders Ridge";
+export const MAGNOLIA_WETLANDS = "Magnolia Wetlands";
+export const HOKUSAI_CLIFFS = "Hokusai Cliffs";
+export const NAUTILUS_PLATEAU = "Nautilus Plateau";
+export const PETROL_BAY = "Petrol Bay";
+export const GRAND_HAVEN = "Grand Haven";
+export const JUGBAND_HILLS = "Jugband Hills";
+export const COTTONWOOD_FOREST = "Cottonwood Forest";
