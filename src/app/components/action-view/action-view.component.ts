@@ -110,7 +110,7 @@ export class ActionViewComponent implements OnInit{
       factoriesCount: this.cityData.factoriesCount,
       selectedMaterials: this.selectedItemNameList.map(material => material.label)
     }
-    this.http.post<any>('http://127.0.0.1:5000/perform/action', request).subscribe(response=>{
+    this.http.post<any>('http://127.0.0.1:5000/action-perform', request).subscribe(response=>{
       console.log(response)
     });
   }

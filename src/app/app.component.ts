@@ -4,6 +4,7 @@ import {MatBottomSheet} from '@angular/material/bottom-sheet';
 import {BottomSheetComponent} from "./components/bottom-sheet/bottom-sheet.component";
 import {SharedDataService} from "./services/shared-data.service";
 import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -68,7 +69,7 @@ export class AppComponent {
   @ViewChild(ActionViewComponent, { static: false }) actionViewComponent!: ActionViewComponent;
   private _bottomSheet = inject(MatBottomSheet);
 
-  constructor(private sharedDataService:SharedDataService, private router:Router) {
+  constructor(private sharedDataService:SharedDataService, private router:Router, private http: HttpClient) {
 
   }
 
@@ -119,5 +120,11 @@ export class AppComponent {
     this.router.navigateByUrl('');
     this.selectedRoute = -1;
     this.sharedDataService.selectedRouteIndex = -1;
+  }
+
+  stopAction(){
+    this.http.get<any>('http://127.0.0.1:5000/action-stop').subscribe(response=>{
+      console.log(response)
+    });
   }
 }
