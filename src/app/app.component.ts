@@ -112,10 +112,12 @@ export class AppComponent {
   }
 
   clearMaterials(){
-    this.sharedDataService.triggerAction();
+    this.sharedDataService.clearAllChips();
   }
 
   gotoHome(){
     this.router.navigateByUrl('');
+    this.selectedRoute = -1;
+    this.sharedDataService.selectedRouteIndex = -1;
   }
 }

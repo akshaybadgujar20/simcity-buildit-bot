@@ -12,6 +12,7 @@ import {
   SELL_WITH_ZERO_VALUE
 } from "../../constants/city.actions";
 import {MatButtonModule} from "@angular/material/button";
+import {SharedDataService} from "../../services/shared-data.service";
 
 
 @Component({
@@ -29,6 +30,9 @@ export class BottomSheetComponent {
   private _bottomSheetRef =
     inject<MatBottomSheetRef<BottomSheetComponent>>(MatBottomSheetRef);
 
+  constructor(private sharedDataService:SharedDataService) {
+  }
+
   actionsValues = [
     {"title": CONTINUOUS_BUY, "function_call": "CONTINUOUS_BUY"},
     {"title": SELL_WITH_FULL_VALUE, "function_call": "SELL_WITH_FULL_VALUE"},
@@ -44,6 +48,10 @@ export class BottomSheetComponent {
   openLink(event: MouseEvent): void {
     this._bottomSheetRef.dismiss();
     event.preventDefault();
+  }
+
+  peformAction(action: any, index: number){
+    this.sharedDataService.performAction(action, index);
   }
 }
 

@@ -25,6 +25,8 @@ import {Subject} from "rxjs";
 export class SharedDataService {
 
   selectedRouteIndex: number = -1;
+  action:any;
+  index: number | undefined;
   actionsValues = [
     {"title": CONTINUOUS_BUY, "function_call": "CONTINUOUS_BUY"},
     {"title": SELL_WITH_FULL_VALUE, "function_call": "SELL_WITH_FULL_VALUE"},
@@ -135,11 +137,20 @@ export class SharedDataService {
     });
   }
 
-  private actionTrigger = new Subject<void>();
-  actionTrigger$ = this.actionTrigger.asObservable();
+    private clearAllChipsAction = new Subject<void>();
+    clearAllChipsAction$ = this.clearAllChipsAction.asObservable();
 
-  triggerAction() {
-    this.actionTrigger.next();
+  private performActionTask = new Subject<void>();
+  performActionTask$ = this.performActionTask.asObservable();
+
+  clearAllChips() {
+    this.clearAllChipsAction.next();
+  }
+
+  performAction(action:any, index:number) {
+    this.action = action;
+    this.index = index;
+    this.performActionTask.next();
   }
 
 }

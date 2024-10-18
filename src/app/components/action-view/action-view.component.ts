@@ -88,12 +88,15 @@ export class ActionViewComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.sharedDataService.actionTrigger$.subscribe(() => {
+    this.sharedDataService.clearAllChipsAction$.subscribe(() => {
       this.clearAllChips();
+    });
+    this.sharedDataService.performActionTask$.subscribe(() => {
+      this.performAction(this.sharedDataService.action,this.sharedDataService.index);
     });
   }
 
-  performAction(action:any,index:number){
+  performAction(action: any, index: number | undefined){
     this.selectedOptions = [];
     if(this.selectedIndex === index){
       this.selectedIndex = -1;
