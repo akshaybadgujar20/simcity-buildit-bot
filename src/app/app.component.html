@@ -3,7 +3,7 @@
   <mat-sidenav #drawer mode="over" class="sidenav" (openedChange)="onSidenavToggle($event)">
     <mat-nav-list>
       <div *ngFor="let route of routerLinkList; let index = index">
-        <mat-list-item (click)="drawer.toggle()" routerLink="route.link" (click)="selectRoute(index)" class="list-item" [class]="{'selected': selectedRoute === index}">{{route.name}}</mat-list-item>
+        <mat-list-item (click)="drawer.toggle()" (click)="selectRoute(route, index)" class="list-item" [class]="{'selected': selectedRoute === index}">{{route.name}}</mat-list-item>
         <mat-divider></mat-divider>
       </div>
     </mat-nav-list>
@@ -16,17 +16,15 @@
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>{{ tabList[selectedRoute]?.title }}</span>
+      <span>{{ selectedRoute == -1 ? welcomeMessage : cityName }}</span>
+      <span class="example-spacer"></span>
+        <button mat-icon-button (click)="gotoHome()" class="float-end">
+          <mat-icon>home</mat-icon>
+        </button>
     </mat-toolbar>
 
-    <!-- Page content -->
-    <!--<mat-tab *ngFor="let tab of tabList; let i = index" [label]="tab.title">
-      <ng-container>
-        <app-action-view [selectedTabData]="tab"></app-action-view>
-      </ng-container>
-    </mat-tab>-->
-    <app-action-view [selectedTabData]="tabList[selectedRoute]" ></app-action-view>
 
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <div class="d-flex justify-content-around mt-3">
