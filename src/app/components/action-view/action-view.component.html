@@ -43,5 +43,5 @@
   <mat-icon>add</mat-icon>
 </button>
 <mat-menu #menu="matMenu" yPosition="above" xPosition="before">
-  <button mat-raised-button color="primary" (click)="performAction(action)" *ngFor="let action of actionsValues;let index = index;" class="mb-4 d-flex justify-content-around">{{action.title}}</button>
+  <button mat-raised-button color="primary" (click)="performAction(action)" *ngFor="let action of actionsValues;let index = index;" class="mb-2 d-flex justify-content-around">{{action.title}}</button>
 </mat-menu>

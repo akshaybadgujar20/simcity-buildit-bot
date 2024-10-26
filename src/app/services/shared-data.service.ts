@@ -61,7 +61,7 @@ export class SharedDataService {
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":9,
-          "commercialCount":7
+          "commercialCount":9
         },
         {
           "title": SUNSHINE_VALLEY,
