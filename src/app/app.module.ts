@@ -29,6 +29,7 @@ import {MatListModule} from "@angular/material/list";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {routes} from "./app.routes";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import {MatMenu, MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes), // Add routing module here
+    RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' }), // Add routing module here
     HttpClientModule,
     CommonModule,
     MatSelectModule,
@@ -65,6 +66,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     RouterModule,
     MatToolbarModule,
     MatListModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),

@@ -1,19 +1,74 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {SharedDataService} from "../../services/shared-data.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {
+  ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION, ADD_RAW_MATERIAL_TO_PRODUCTION,
+  ADVERTISE_ITEM_ON_TRADE_DEPOT,
+  COLLECT_FROM_COMMERCIAL,
+  COLLECT_FROM_FACTORY, COLLECT_SOLD_ITEM_MONEY,
+  CONTINUOUS_BUY,
+  SELL_WITH_FULL_VALUE,
+  SELL_WITH_ZERO_VALUE
+} from "../../constants/city.actions";
 
 @Component({
   selector: 'app-action-view',
   templateUrl: './action-view.component.html',
   styleUrl: './action-view.component.scss'
 })
-export class ActionViewComponent implements OnInit{
+export class ActionViewComponent implements OnInit, OnDestroy{
 
   cityData: any;
   selectedOptions: string[] = [];
   selectedIndex: any;
   selectedItemNameList:any[] = [];
-
+  routerLinkList = [
+    {
+      link: "/base_city",
+      name: "Base City"
+    },
+    {
+      link: "/barleycorn_point",
+      name: "Barleycorn Point"
+    },
+    {
+      link: "/sunshine_valley",
+      name: "Sunshine Valley"
+    },
+    {
+      link: "/traders_ridge",
+      name: "Traders Ridge"
+    },
+    {
+      link: "/magnolia_wetlands",
+      name: "Magnolia Wetlands"
+    },
+    {
+      link: "/hokusai_cliffs",
+      name: "Hokusai Cliffs"
+    },
+    {
+      link: "/nautilus_plateau",
+      name: "Nautilus Plateau"
+    },
+    {
+      link: "/petrol_bay",
+      name: "Petrol Bay"
+    },
+    {
+      link: "/grand_haven",
+      name: "Grand Haven"
+    },
+    {
+      link: "/jugband_hills",
+      name: "Jugband Hills"
+    },
+    {
+      link: "/cottonwood_forest",
+      name: "Cottonwood Forest"
+    }
+  ];
   frequentMaterialList = [
     {
       "name": "CEMENT",
@@ -82,37 +137,53 @@ export class ActionViewComponent implements OnInit{
       "imgUrl":"assets/icons/storage_bars.png"
     }
   ];
-
-  constructor(private http: HttpClient, private sharedDataService: SharedDataService) {
+  routeIndex = -1;
+  actionsValues = [
+    {"title": CONTINUOUS_BUY, "function_call": "CONTINUOUS_BUY"},
+    {"title": SELL_WITH_FULL_VALUE, "function_call": "SELL_WITH_FULL_VALUE"},
+    {"title": SELL_WITH_ZERO_VALUE, "function_call": "SELL_WITH_ZERO_VALUE"},
+    {"title": COLLECT_FROM_FACTORY, "function_call": "COLLECT_FROM_FACTORY"},
+    {"title": COLLECT_FROM_COMMERCIAL, "function_call": "COLLECT_FROM_COMMERCIAL"},
+    {"title": COLLECT_SOLD_ITEM_MONEY, "function_call": "COLLECT_SOLD_ITEM_MONEY"},
+    {"title": ADVERTISE_ITEM_ON_TRADE_DEPOT, "function_call": "ADVERTISE_ITEM_ON_TRADE_DEPOT"},
+    {"title": ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION, "function_call": "ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION"},
+    {"title": ADD_RAW_MATERIAL_TO_PRODUCTION, "function_call": "ADD_RAW_MATERIAL_TO_PRODUCTION"},
+  ];
+  constructor(private http: HttpClient, private sharedDataService: SharedDataService, private activatedRoute: ActivatedRoute, private router:Router) {
     this.cityData = this.sharedDataService.cityDataList[this.sharedDataService.selectedRouteIndex];
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      this.routeIndex = parseInt(<string>params.get('routeIndex'));
+      console.log('Query Params - routeIndex:', this.routeIndex);
+    });
   }
 
   ngOnInit() {
-    this.sharedDataService.clearAllChipsAction$.subscribe(() => {
-      this.clearAllChips();
-    });
-    this.sharedDataService.performActionTask$.subscribe(() => {
-      this.performAction(this.sharedDataService.action,this.sharedDataService.index);
-    });
   }
 
-  performAction(action: any, index: number | undefined){
-    this.selectedOptions = [];
-    if(this.selectedIndex === index){
-      this.selectedIndex = -1;
-    } else{
-      this.selectedIndex = index;
+  ngOnDestroy(){
+    console.log('ngOnDestroy called')
+  }
+
+  performAction(action: any){
+    if(this.router.url.slice(0,this.router.url.indexOf('?')) === this.routerLinkList[this.routeIndex].link){
+      this.selectedOptions = [];
+      if(this.selectedIndex === this.routeIndex){
+        this.selectedIndex = -1;
+      } else{
+        this.selectedIndex = this.routeIndex;
+      }
+      const request = {
+        port: this.cityData.port,
+        action: action.function_call,
+        commercialCount: this.cityData.commercialCount,
+        factoriesCount: this.cityData.factoriesCount,
+        selectedMaterials: this.selectedItemNameList.map(material => material.name)
+      }
+      console.log("API call");
+      this.http.post<any>('http://192.168.8.133:5000/action-perform', request).subscribe(response=>{
+        console.log(response)
+      });
     }
-    const request = {
-      port: this.cityData.port,
-      action: action.function_call,
-      commercialCount: this.cityData.commercialCount,
-      factoriesCount: this.cityData.factoriesCount,
-      selectedMaterials: this.selectedItemNameList.map(material => material.label)
-    }
-    this.http.post<any>('http://127.0.0.1:5000/action-perform', request).subscribe(response=>{
-      console.log(response)
-    });
   }
 
   removeChip(index:number){

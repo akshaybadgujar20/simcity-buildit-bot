@@ -1,6 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ActionViewComponent} from "./components/action-view/action-view.component";
 import {NgModule} from "@angular/core";
+import {AppComponent} from "./app.component";
 
 export const routes: Routes = [
   { path: 'base_city', component: ActionViewComponent },

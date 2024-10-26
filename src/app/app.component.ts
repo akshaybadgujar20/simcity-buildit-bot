@@ -5,6 +5,15 @@ import {BottomSheetComponent} from "./components/bottom-sheet/bottom-sheet.compo
 import {SharedDataService} from "./services/shared-data.service";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import {
+  ADD_COMMERCIAL_MATERIAL_TO_PRODUCTION, ADD_RAW_MATERIAL_TO_PRODUCTION,
+  ADVERTISE_ITEM_ON_TRADE_DEPOT,
+  COLLECT_FROM_COMMERCIAL,
+  COLLECT_FROM_FACTORY, COLLECT_SOLD_ITEM_MONEY,
+  CONTINUOUS_BUY,
+  SELL_WITH_FULL_VALUE,
+  SELL_WITH_ZERO_VALUE
+} from "./constants/city.actions";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +27,7 @@ export class AppComponent {
   cityDataList: any;
   showFiller = false;
   cityName: string = '';
-  selectedRoute = -1;
+  selectedRouteIndex = -1;
   welcomeMessage = 'Welcome to Simcity Bot';
   routerLinkList = [
     {
@@ -66,15 +75,12 @@ export class AppComponent {
       name: "Cottonwood Forest"
     }
   ];
-  @ViewChild(ActionViewComponent, { static: false }) actionViewComponent!: ActionViewComponent;
-  private _bottomSheet = inject(MatBottomSheet);
+
+
+  @ViewChild(ActionViewComponent) actionViewComponent!: ActionViewComponent;
 
   constructor(private sharedDataService:SharedDataService, private router:Router, private http: HttpClient) {
 
-  }
-
-  onTabChange(event: any) {
-    this.selectedTab = event.index;
   }
 
   onSidenavToggle(isOpened: boolean) {
@@ -82,14 +88,14 @@ export class AppComponent {
   }
 
   selectRoute(route:any ,index:number){
-    this.selectedRoute = index;
+    this.selectedRouteIndex = index;
     this.sharedDataService.selectedRouteIndex = index;
     this.cityName = this.sharedDataService.cityDataList[this.sharedDataService.selectedRouteIndex].title;
-    this.router.navigateByUrl(route.link);
-  }
-
-  openBottomSheet(): void {
-    this._bottomSheet.open(BottomSheetComponent);
+    this.router.navigate([route.link], {
+      queryParams: {
+        "routeIndex": this.selectedRouteIndex
+      }
+    });
   }
 
   convertData(data:any){
@@ -113,18 +119,19 @@ export class AppComponent {
   }
 
   clearMaterials(){
-    this.sharedDataService.clearAllChips();
+    this.actionViewComponent.clearAllChips();
   }
 
   gotoHome(){
     this.router.navigateByUrl('');
-    this.selectedRoute = -1;
+    this.selectedRouteIndex = -1;
     this.sharedDataService.selectedRouteIndex = -1;
   }
 
   stopAction(){
-    this.http.get<any>('http://127.0.0.1:5000/action-stop').subscribe(response=>{
+    this.http.get<any>('http://192.168.8.133:5000/action-stop').subscribe(response=>{
       console.log(response)
     });
   }
+
 }

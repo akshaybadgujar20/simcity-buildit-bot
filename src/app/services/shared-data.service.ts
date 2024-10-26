@@ -18,6 +18,7 @@ import {
 } from "../constants/city.actions";
 import {HttpClient} from "@angular/common/http";
 import {Subject} from "rxjs";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class SharedDataService {
 
   selectedRouteIndex: number = -1;
   action:any;
+  url: string | undefined;
   index: number | undefined;
   actionsValues = [
     {"title": CONTINUOUS_BUY, "function_call": "CONTINUOUS_BUY"},
@@ -41,7 +43,7 @@ export class SharedDataService {
   cityDataList: any[] = [];
   materialList:any[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,  private router: Router) {
     this.http.get<any>('assets/data.json').subscribe(data => {
       this.materialList = data;
       this.cityDataList = [
@@ -150,6 +152,7 @@ export class SharedDataService {
   performAction(action:any, index:number) {
     this.action = action;
     this.index = index;
+    this.url = this.router.url;
     this.performActionTask.next();
   }
 
