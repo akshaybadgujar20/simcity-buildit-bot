@@ -65,7 +65,7 @@ export class SharedDataService {
         },
         {
           "title": SUNSHINE_VALLEY,
-          "port": "5905",
+          "port": "6135",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":9,

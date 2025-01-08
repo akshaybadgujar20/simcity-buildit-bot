@@ -129,7 +129,7 @@ export class AppComponent {
   }
 
   stopAction(){
-    this.http.get<any>('http://192.168.8.133:5000/action-stop').subscribe(response=>{
+    this.http.get<any>('http://127.0.0.1:5000/action-stop').subscribe(response=>{
       console.log(response)
     });
   }

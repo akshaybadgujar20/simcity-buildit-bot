@@ -180,7 +180,7 @@ export class ActionViewComponent implements OnInit, OnDestroy{
         selectedMaterials: this.selectedItemNameList.map(material => material.name)
       }
       console.log("API call");
-      this.http.post<any>('http://192.168.8.133:5000/action-perform', request).subscribe(response=>{
+      this.http.post<any>('http://127.0.0.1:5000/action-perform', request).subscribe(response=>{
         console.log(response)
       });
     }
