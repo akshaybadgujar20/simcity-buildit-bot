@@ -45,6 +45,10 @@ export class ActionViewComponent implements OnInit, OnDestroy{
       name: "Magnolia Wetlands"
     },
     {
+      link: "/plunder_point",
+      name: "Plunder Point"
+    },
+    {
       link: "/hokusai_cliffs",
       name: "Hokusai Cliffs"
     },
@@ -71,70 +75,34 @@ export class ActionViewComponent implements OnInit, OnDestroy{
   ];
   frequentMaterialList = [
     {
-      "name": "CEMENT",
-      "isChecked": false,
-      "isAdded": false,
-      "imgUrl":"assets/icons/cement.png"
-    },
-    {
       "name": "FRUIT_AND_BERRIES",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/fruit_and_berries.png"
     },
     {
-      "name": "WATCH",
+      "name": "GLUE",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/watch.png"
+      "imgUrl":"assets/icons/glue.png"
     },
     {
-      "name": "TREE_SAPLINGS",
+      "name": "HOME_TEXTILE",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/tree_samplings.png"
+      "imgUrl":"assets/icons/home_textiles.png"
     },
     {
-      "name": "SHOVEL",
+      "name": "PAINT",
       "isChecked": false,
       "isAdded": false,
-      "imgUrl":"assets/icons/shovel.png"
+      "imgUrl":"assets/icons/paint.png"
     },
     {
       "name": "MEASURING_TAPE",
       "isChecked": false,
       "isAdded": false,
       "imgUrl":"assets/icons/measuring_tape.png"
-    },
-    {
-      "name": "LIGHTING_SYSTEM",
-      "isChecked": false,
-      "isAdded": false,
-      "imgUrl":"assets/icons/lighting_system.png"
-    },
-    {
-      "name": "TV",
-      "isChecked": false,
-      "isAdded": false,
-      "imgUrl":"assets/icons/tv.png"
-    },
-    {
-      "name": "STORAGE_CAMERA",
-      "isChecked": false,
-      "isAdded": false,
-      "imgUrl":"assets/icons/storage_camera.png"
-    },
-    {
-      "name": "STORAGE_LOCK",
-      "isChecked": false,
-      "isAdded": false,
-      "imgUrl":"assets/icons/storage_lock.png"
-    },
-    {
-      "name": "STORAGE_BARS",
-      "isChecked": false,
-      "isAdded": false,
-      "imgUrl":"assets/icons/storage_bars.png"
     }
   ];
   routeIndex = -1;

@@ -357,6 +357,171 @@
     ]
   },
   {
+    "buildingName": "REGIONAL_RAW_MATERIALS",
+    "materialList": [
+      {
+        "materialName": "RECYCLED_FABRIC",
+        "materialInfo": {
+          "name": "RECYCLED_FABRIC",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/raw_materials/recycled_fabric.png",
+            "x1": "global_trade_hq/raw_materials/recycled_fabric_x1.png",
+            "x2": "global_trade_hq/raw_materials/recycled_fabric_x2.png",
+            "x3": "global_trade_hq/raw_materials/recycled_fabric_x3.png",
+            "x4": "global_trade_hq/raw_materials/recycled_fabric_x4.png",
+            "x5": "global_trade_hq/raw_materials/recycled_fabric_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/raw_materials/recycled_fabric.png",
+            "x1": "trade_depot/raw_materials/recycled_fabric_x1.png",
+            "x2": "trade_depot/raw_materials/recycled_fabric_x2.png",
+            "x3": "trade_depot/raw_materials/recycled_fabric_x3.png",
+            "x4": "trade_depot/raw_materials/recycled_fabric_x4.png",
+            "x5": "trade_depot/raw_materials/recycled_fabric_x5.png"
+          },
+          "base_price": 8,
+          "actual_price": 12,
+          "storage_template": "city_storage/raw_materials/recycled_fabric.png",
+          "sell_duration": 1700,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/recycled_fabric.png"
+        }
+      },
+      {
+        "materialName": "CRUDE_OIL",
+        "materialInfo": {
+          "name": "CRUDE_OIL",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/raw_materials/crude_oil.png",
+            "x1": "global_trade_hq/raw_materials/crude_oil_x1.png",
+            "x2": "global_trade_hq/raw_materials/crude_oil_x2.png",
+            "x3": "global_trade_hq/raw_materials/crude_oil_x3.png",
+            "x4": "global_trade_hq/raw_materials/crude_oil_x4.png",
+            "x5": "global_trade_hq/raw_materials/crude_oil_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/raw_materials/crude_oil.png",
+            "x1": "trade_depot/raw_materials/crude_oil_x1.png",
+            "x2": "trade_depot/raw_materials/crude_oil_x2.png",
+            "x3": "trade_depot/raw_materials/crude_oil_x3.png",
+            "x4": "trade_depot/raw_materials/crude_oil_x4.png",
+            "x5": "trade_depot/raw_materials/crude_oil_x5.png"
+          },
+          "base_price": 20,
+          "actual_price": 25,
+          "storage_template": "city_storage/raw_materials/crude_oil.png",
+          "sell_duration": 2200,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/crude_oil.png"
+        }
+      },
+      {
+        "materialName": "COCONUT",
+        "materialInfo": {
+          "name": "COCONUT",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/raw_materials/coconut.png",
+            "x1": "global_trade_hq/raw_materials/coconut_x1.png",
+            "x2": "global_trade_hq/raw_materials/coconut_x2.png",
+            "x3": "global_trade_hq/raw_materials/coconut_x3.png",
+            "x4": "global_trade_hq/raw_materials/coconut_x4.png",
+            "x5": "global_trade_hq/raw_materials/coconut_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/raw_materials/coconut.png",
+            "x1": "trade_depot/raw_materials/coconut_x1.png",
+            "x2": "trade_depot/raw_materials/coconut_x2.png",
+            "x3": "trade_depot/raw_materials/coconut_x3.png",
+            "x4": "trade_depot/raw_materials/coconut_x4.png",
+            "x5": "trade_depot/raw_materials/coconut_x5.png"
+          },
+          "base_price": 3,
+          "actual_price": 5,
+          "storage_template": "city_storage/raw_materials/coconut.png",
+          "sell_duration": 900,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/coconut.png"
+        }
+      },
+      {
+        "materialName": "SILK",
+        "materialInfo": {
+          "name": "SILK",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/raw_materials/silk.png",
+            "x1": "global_trade_hq/raw_materials/silk_x1.png",
+            "x2": "global_trade_hq/raw_materials/silk_x2.png",
+            "x3": "global_trade_hq/raw_materials/silk_x3.png",
+            "x4": "global_trade_hq/raw_materials/silk_x4.png",
+            "x5": "global_trade_hq/raw_materials/silk_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/raw_materials/silk.png",
+            "x1": "trade_depot/raw_materials/silk_x1.png",
+            "x2": "trade_depot/raw_materials/silk_x2.png",
+            "x3": "trade_depot/raw_materials/silk_x3.png",
+            "x4": "trade_depot/raw_materials/silk_x4.png",
+            "x5": "trade_depot/raw_materials/silk_x5.png"
+          },
+          "base_price": 25,
+          "actual_price": 30,
+          "storage_template": "city_storage/raw_materials/silk.png",
+          "sell_duration": 2500,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/silk.png"
+        }
+      },
+      {
+        "materialName": "FISH",
+        "materialInfo": {
+          "name": "FISH",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/raw_materials/fish.png",
+            "x1": "global_trade_hq/raw_materials/fish_x1.png",
+            "x2": "global_trade_hq/raw_materials/fish_x2.png",
+            "x3": "global_trade_hq/raw_materials/fish_x3.png",
+            "x4": "global_trade_hq/raw_materials/fish_x4.png",
+            "x5": "global_trade_hq/raw_materials/fish_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/raw_materials/fish.png",
+            "x1": "trade_depot/raw_materials/fish_x1.png",
+            "x2": "trade_depot/raw_materials/fish_x2.png",
+            "x3": "trade_depot/raw_materials/fish_x3.png",
+            "x4": "trade_depot/raw_materials/fish_x4.png",
+            "x5": "trade_depot/raw_materials/fish_x5.png"
+          },
+          "base_price": 10,
+          "actual_price": 14,
+          "storage_template": "city_storage/raw_materials/fish.png",
+          "sell_duration": 1600,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/fish.png"
+        }
+      }
+    ]
+  },
+  {
     "buildingName": "BUILDING_SUPPLIES_STORE",
     "materialList": [
       {
@@ -2172,6 +2337,107 @@
     ]
   },
   {
+    "buildingName": "BEACH_ITEMS",
+    "materialList": [
+      {
+        "materialName": "SCUBA_MASK",
+        "materialInfo": {
+          "name": "SCUBA_MASK",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/special/beach/scuba_mask.png",
+            "x1": "global_trade_hq/special/beach/blade_x1.png",
+            "x2": "global_trade_hq/special/beach/blade_x2.png",
+            "x3": "global_trade_hq/special/beach/blade_x3.png",
+            "x4": "global_trade_hq/special/beach/blade_x4.png",
+            "x5": "global_trade_hq/special/beach/blade_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/special/beach/scuba_mask.png",
+            "x1": "trade_depot/special/beach/blade_x1.png",
+            "x2": "trade_depot/special/beach/blade_x2.png",
+            "x3": "trade_depot/special/beach/blade_x3.png",
+            "x4": "trade_depot/special/beach/blade_x4.png",
+            "x5": "trade_depot/special/beach/blade_x5.png"
+          },
+          "base_price": 7,
+          "actual_price": 10,
+          "storage_template": "city_storage/special/beach/scuba_mask.png",
+          "sell_duration": 1500,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/scuba_mask.png"
+        }
+      },
+      {
+        "materialName": "LIFEBELT",
+        "materialInfo": {
+          "name": "LIFEBELT",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/special/beach/lifebelt.png",
+            "x1": "global_trade_hq/special/beach/exhaust_x1.png",
+            "x2": "global_trade_hq/special/beach/exhaust_x2.png",
+            "x3": "global_trade_hq/special/beach/exhaust_x3.png",
+            "x4": "global_trade_hq/special/beach/exhaust_x4.png",
+            "x5": "global_trade_hq/special/beach/exhaust_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/special/beach/lifebelt.png",
+            "x1": "trade_depot/special/beach/exhaust_x1.png",
+            "x2": "trade_depot/special/beach/exhaust_x2.png",
+            "x3": "trade_depot/special/beach/exhaust_x3.png",
+            "x4": "trade_depot/special/beach/exhaust_x4.png",
+            "x5": "trade_depot/special/beach/exhaust_x5.png"
+          },
+          "base_price": 7,
+          "actual_price": 10,
+          "storage_template": "city_storage/special/beach/lifebelt.png",
+          "sell_duration": 1500,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/lifebelt.png"
+        }
+      },
+      {
+        "materialName": "SHIP_WHEEL",
+        "materialInfo": {
+          "name": "SHIP_WHEEL",
+          "x_location": 665,
+          "y_location": 375,
+          "hq_templates": {
+            "base": "global_trade_hq/special/beach/ship_wheel.png",
+            "x1": "global_trade_hq/special/beach/wheel_x1.png",
+            "x2": "global_trade_hq/special/beach/wheel_x2.png",
+            "x3": "global_trade_hq/special/beach/wheel_x3.png",
+            "x4": "global_trade_hq/special/beach/wheel_x4.png",
+            "x5": "global_trade_hq/special/beach/wheel_x5.png"
+          },
+          "depot_templates": {
+            "base": "trade_depot/special/beach/ship_wheel.png",
+            "x1": "trade_depot/special/beach/wheel_x1.png",
+            "x2": "trade_depot/special/beach/wheel_x2.png",
+            "x3": "trade_depot/special/beach/wheel_x3.png",
+            "x4": "trade_depot/special/beach/wheel_x4.png",
+            "x5": "trade_depot/special/beach/wheel_x5.png"
+          },
+          "base_price": 7,
+          "actual_price": 10,
+          "storage_template": "city_storage/special/beach/ship_wheel.png",
+          "sell_duration": 1500,
+          "manufacturing_recipes": {},
+          "isChecked": false,
+          "isAdded": false,
+          "imgUrl": "assets/icons/ship_wheel.png"
+        }
+      }
+    ]
+  },
+  {
     "buildingName": "BUREAU_OF_RESTORATION",
     "materialList": [
       {
@@ -2997,171 +3263,6 @@
           "isChecked": false,
           "isAdded": false,
           "imgUrl": "assets/icons/yoga_mat.png"
-        }
-      }
-    ]
-  },
-  {
-    "buildingName": "REGIONAL_RAW_MATERIALS",
-    "materialList": [
-      {
-        "materialName": "RECYCLED_FABRIC",
-        "materialInfo": {
-          "name": "RECYCLED_FABRIC",
-          "x_location": 665,
-          "y_location": 375,
-          "hq_templates": {
-            "base": "global_trade_hq/raw_materials/recycled_fabric.png",
-            "x1": "global_trade_hq/raw_materials/recycled_fabric_x1.png",
-            "x2": "global_trade_hq/raw_materials/recycled_fabric_x2.png",
-            "x3": "global_trade_hq/raw_materials/recycled_fabric_x3.png",
-            "x4": "global_trade_hq/raw_materials/recycled_fabric_x4.png",
-            "x5": "global_trade_hq/raw_materials/recycled_fabric_x5.png"
-          },
-          "depot_templates": {
-            "base": "trade_depot/raw_materials/recycled_fabric.png",
-            "x1": "trade_depot/raw_materials/recycled_fabric_x1.png",
-            "x2": "trade_depot/raw_materials/recycled_fabric_x2.png",
-            "x3": "trade_depot/raw_materials/recycled_fabric_x3.png",
-            "x4": "trade_depot/raw_materials/recycled_fabric_x4.png",
-            "x5": "trade_depot/raw_materials/recycled_fabric_x5.png"
-          },
-          "base_price": 8,
-          "actual_price": 12,
-          "storage_template": "city_storage/raw_materials/recycled_fabric.png",
-          "sell_duration": 1700,
-          "manufacturing_recipes": {},
-          "isChecked": false,
-          "isAdded": false,
-          "imgUrl": "assets/icons/recycled_fabric.png"
-        }
-      },
-      {
-        "materialName": "CRUDE_OIL",
-        "materialInfo": {
-          "name": "CRUDE_OIL",
-          "x_location": 665,
-          "y_location": 375,
-          "hq_templates": {
-            "base": "global_trade_hq/raw_materials/crude_oil.png",
-            "x1": "global_trade_hq/raw_materials/crude_oil_x1.png",
-            "x2": "global_trade_hq/raw_materials/crude_oil_x2.png",
-            "x3": "global_trade_hq/raw_materials/crude_oil_x3.png",
-            "x4": "global_trade_hq/raw_materials/crude_oil_x4.png",
-            "x5": "global_trade_hq/raw_materials/crude_oil_x5.png"
-          },
-          "depot_templates": {
-            "base": "trade_depot/raw_materials/crude_oil.png",
-            "x1": "trade_depot/raw_materials/crude_oil_x1.png",
-            "x2": "trade_depot/raw_materials/crude_oil_x2.png",
-            "x3": "trade_depot/raw_materials/crude_oil_x3.png",
-            "x4": "trade_depot/raw_materials/crude_oil_x4.png",
-            "x5": "trade_depot/raw_materials/crude_oil_x5.png"
-          },
-          "base_price": 20,
-          "actual_price": 25,
-          "storage_template": "city_storage/raw_materials/crude_oil.png",
-          "sell_duration": 2200,
-          "manufacturing_recipes": {},
-          "isChecked": false,
-          "isAdded": false,
-          "imgUrl": "assets/icons/crude_oil.png"
-        }
-      },
-      {
-        "materialName": "COCONUT",
-        "materialInfo": {
-          "name": "COCONUT",
-          "x_location": 665,
-          "y_location": 375,
-          "hq_templates": {
-            "base": "global_trade_hq/raw_materials/coconut.png",
-            "x1": "global_trade_hq/raw_materials/coconut_x1.png",
-            "x2": "global_trade_hq/raw_materials/coconut_x2.png",
-            "x3": "global_trade_hq/raw_materials/coconut_x3.png",
-            "x4": "global_trade_hq/raw_materials/coconut_x4.png",
-            "x5": "global_trade_hq/raw_materials/coconut_x5.png"
-          },
-          "depot_templates": {
-            "base": "trade_depot/raw_materials/coconut.png",
-            "x1": "trade_depot/raw_materials/coconut_x1.png",
-            "x2": "trade_depot/raw_materials/coconut_x2.png",
-            "x3": "trade_depot/raw_materials/coconut_x3.png",
-            "x4": "trade_depot/raw_materials/coconut_x4.png",
-            "x5": "trade_depot/raw_materials/coconut_x5.png"
-          },
-          "base_price": 3,
-          "actual_price": 5,
-          "storage_template": "city_storage/raw_materials/coconut.png",
-          "sell_duration": 900,
-          "manufacturing_recipes": {},
-          "isChecked": false,
-          "isAdded": false,
-          "imgUrl": "assets/icons/coconut.png"
-        }
-      },
-      {
-        "materialName": "SILK",
-        "materialInfo": {
-          "name": "SILK",
-          "x_location": 665,
-          "y_location": 375,
-          "hq_templates": {
-            "base": "global_trade_hq/raw_materials/silk.png",
-            "x1": "global_trade_hq/raw_materials/silk_x1.png",
-            "x2": "global_trade_hq/raw_materials/silk_x2.png",
-            "x3": "global_trade_hq/raw_materials/silk_x3.png",
-            "x4": "global_trade_hq/raw_materials/silk_x4.png",
-            "x5": "global_trade_hq/raw_materials/silk_x5.png"
-          },
-          "depot_templates": {
-            "base": "trade_depot/raw_materials/silk.png",
-            "x1": "trade_depot/raw_materials/silk_x1.png",
-            "x2": "trade_depot/raw_materials/silk_x2.png",
-            "x3": "trade_depot/raw_materials/silk_x3.png",
-            "x4": "trade_depot/raw_materials/silk_x4.png",
-            "x5": "trade_depot/raw_materials/silk_x5.png"
-          },
-          "base_price": 25,
-          "actual_price": 30,
-          "storage_template": "city_storage/raw_materials/silk.png",
-          "sell_duration": 2500,
-          "manufacturing_recipes": {},
-          "isChecked": false,
-          "isAdded": false,
-          "imgUrl": "assets/icons/silk.png"
-        }
-      },
-      {
-        "materialName": "FISH",
-        "materialInfo": {
-          "name": "FISH",
-          "x_location": 665,
-          "y_location": 375,
-          "hq_templates": {
-            "base": "global_trade_hq/raw_materials/fish.png",
-            "x1": "global_trade_hq/raw_materials/fish_x1.png",
-            "x2": "global_trade_hq/raw_materials/fish_x2.png",
-            "x3": "global_trade_hq/raw_materials/fish_x3.png",
-            "x4": "global_trade_hq/raw_materials/fish_x4.png",
-            "x5": "global_trade_hq/raw_materials/fish_x5.png"
-          },
-          "depot_templates": {
-            "base": "trade_depot/raw_materials/fish.png",
-            "x1": "trade_depot/raw_materials/fish_x1.png",
-            "x2": "trade_depot/raw_materials/fish_x2.png",
-            "x3": "trade_depot/raw_materials/fish_x3.png",
-            "x4": "trade_depot/raw_materials/fish_x4.png",
-            "x5": "trade_depot/raw_materials/fish_x5.png"
-          },
-          "base_price": 10,
-          "actual_price": 14,
-          "storage_template": "city_storage/raw_materials/fish.png",
-          "sell_duration": 1600,
-          "manufacturing_recipes": {},
-          "isChecked": false,
-          "isAdded": false,
-          "imgUrl": "assets/icons/fish.png"
         }
       }
     ]

@@ -51,6 +51,10 @@ export class AppComponent {
       name: "Magnolia Wetlands"
     },
     {
+      link: "/plunder_point",
+      name: "Plunder Point"
+    },
+    {
       link: "/hokusai_cliffs",
       name: "Hokusai Cliffs"
     },
@@ -75,12 +79,11 @@ export class AppComponent {
       name: "Cottonwood Forest"
     }
   ];
-
+  cityData: any;
 
   @ViewChild(ActionViewComponent) actionViewComponent!: ActionViewComponent;
 
   constructor(private sharedDataService:SharedDataService, private router:Router, private http: HttpClient) {
-
   }
 
   onSidenavToggle(isOpened: boolean) {
@@ -96,6 +99,7 @@ export class AppComponent {
         "routeIndex": this.selectedRouteIndex
       }
     });
+    this.cityData = this.sharedDataService.cityDataList[this.sharedDataService.selectedRouteIndex];
   }
 
   convertData(data:any){
@@ -129,7 +133,7 @@ export class AppComponent {
   }
 
   stopAction(){
-    this.http.get<any>('http://127.0.0.1:5000/action-stop').subscribe(response=>{
+    this.http.post<any>('http://127.0.0.1:5000/action-stop',{port:this.cityData.port}).subscribe(response=>{
       console.log(response)
     });
   }

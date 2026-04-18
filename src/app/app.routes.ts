@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: 'sunshine_valley', component: ActionViewComponent },
   { path: 'traders_ridge', component: ActionViewComponent },
   { path: 'magnolia_wetlands', component: ActionViewComponent },
+  { path: 'plunder_point', component: ActionViewComponent },
   { path: 'hokusai_cliffs', component: ActionViewComponent },
   { path: 'nautilus_plateau', component: ActionViewComponent },
   { path: 'petrol_bay', component: ActionViewComponent },

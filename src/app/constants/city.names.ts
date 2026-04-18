@@ -3,6 +3,7 @@ export const BARLEYCORN_POINT = "Barleycorn Point";
 export const SUNSHINE_VALLEY = "Sunshine Valley";
 export const TRADERS_RIDGE = "Traders Ridge";
 export const MAGNOLIA_WETLANDS = "Magnolia Wetlands";
+export const PLUNDER_POINT = "Plunder Point";
 export const HOKUSAI_CLIFFS = "Hokusai Cliffs";
 export const NAUTILUS_PLATEAU = "Nautilus Plateau";
 export const PETROL_BAY = "Petrol Bay";

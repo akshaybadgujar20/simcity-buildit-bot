@@ -3,7 +3,7 @@ import {
   BARLEYCORN_POINT,
   BASE_CITY, COTTONWOOD_FOREST, GRAND_HAVEN,
   HOKUSAI_CLIFFS, JUGBAND_HILLS,
-  MAGNOLIA_WETLANDS, NAUTILUS_PLATEAU, PETROL_BAY,
+  MAGNOLIA_WETLANDS, NAUTILUS_PLATEAU, PETROL_BAY, PLUNDER_POINT,
   SUNSHINE_VALLEY,
   TRADERS_RIDGE
 } from "../constants/city.names";
@@ -57,7 +57,7 @@ export class SharedDataService {
         },
         {
           "title": BARLEYCORN_POINT,
-          "port": "5895",
+          "port": "5565",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":9,
@@ -65,7 +65,7 @@ export class SharedDataService {
         },
         {
           "title": SUNSHINE_VALLEY,
-          "port": "6135",
+          "port": "5575",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":9,
@@ -73,7 +73,7 @@ export class SharedDataService {
         },
         {
           "title": TRADERS_RIDGE,
-          "port": "5915",
+          "port": "5585",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":7,
@@ -81,15 +81,23 @@ export class SharedDataService {
         },
         {
           "title": MAGNOLIA_WETLANDS,
-          "port": "5925",
+          "port": "5595",
           "actions": this.actionsValues,
           "materialList":this.materialList,
-          "factoriesCount":12,
-          "commercialCount":15
+          "factoriesCount":7,
+          "commercialCount":6
+        },
+        {
+          "title": PLUNDER_POINT,
+          "port": "5675",
+          "actions": this.actionsValues,
+          "materialList":this.materialList,
+          "factoriesCount":7,
+          "commercialCount":6
         },
         {
           "title": HOKUSAI_CLIFFS,
-          "port": "6025",
+          "port": "5645",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":12,
@@ -97,7 +105,7 @@ export class SharedDataService {
         },
         {
           "title": NAUTILUS_PLATEAU,
-          "port": "5945",
+          "port": "5605",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":12,
@@ -113,7 +121,7 @@ export class SharedDataService {
         },
         {
           "title": GRAND_HAVEN,
-          "port": "5965",
+          "port": "5615",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":12,
@@ -121,7 +129,7 @@ export class SharedDataService {
         },
         {
           "title": JUGBAND_HILLS,
-          "port": "5985",
+          "port": "5625",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":12,
@@ -129,7 +137,7 @@ export class SharedDataService {
         },
         {
           "title": COTTONWOOD_FOREST,
-          "port": "6005",
+          "port": "5635",
           "actions": this.actionsValues,
           "materialList":this.materialList,
           "factoriesCount":12,
